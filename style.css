@@ -1,0 +1,669 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 10%;
+    background: #333;
+    color: #fff;
+    z-index: 1;
+}
+#header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/pexels-daniel-absi-952670.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.6;
+
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 0;
+}
+nav #logo{
+    text-decoration: none;
+    color: #fff;
+    background: crimson;
+    border-radius: 50%;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: linear .5s;
+}
+nav #logo:hover{
+    background: #fff;
+    color: crimson;
+    transform: scale(1.2);
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+nav ul li a{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    transition: ease-out .4s;
+}
+nav ul li a:hover{
+    color: crimson;
+}
+nav ul li a:hover::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.288);
+    margin-left: 10px;
+}
+nav ul li a.btn{
+    text-transform: lowercase;
+    color: crimson;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 5px 20px;
+    outline: none;
+    letter-spacing: 2px;
+}
+nav ul li a.btn:hover{
+    border: transparent;
+    color: #fff;
+    background: crimson;
+}
+.txtbox{
+    margin-top: 90px;
+    width: 100%;
+    max-width: 55%;
+    padding: 12px;
+}
+.txtbox .heading h1{
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    animation: moveInLeft 3s;
+    animation-delay: .1s;
+}
+.txtbox .heading h3{
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #dc143c;
+    border-bottom: 1px solid rgba(220, 20, 60, 0.219);
+    animation: moveInLeft 3s;
+    animation-delay: .4s;
+}
+.txtbox p{
+    line-height: 17px;
+    font: 16px;
+    margin-bottom: 20px;
+}
+.imgbox{
+    border-radius: 100%;
+    position: absolute;
+    top:25%;
+    right: 160px;
+    overflow-y: hidden;
+    object-fit: cover;
+
+}
+.imgbox .img1{
+    width: 400px;
+    margin-bottom: -300px;
+    cursor: pointer;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50%{
+        opacity: 1;
+        transform: translate(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInForms{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(50px);
+    }
+    80%{
+        opacity: 1;
+        transform: translateX(80px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+/*login page*******************************888*/
+
+#login{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+.leftside{
+    position: relative;
+    flex: 50%;
+    background: url(./img/pexels-christina-morillo-1181325.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.leftside::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg,#dc143c,#03a9f4);
+    z-index: 1;
+    opacity: 0.3;
+}
+.rightside{
+    position: relative;
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.rightside .formbox{
+    width: 60%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: -3px -3px 2px 2px rgba(0, 0, 0, 0.6), -3px -3px 2px 2px rgba(0, 0, 0, 0.6) ;
+}
+.rightside .formbox h2{
+    color: #6B7B7E;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    letter-spacing: 1;
+    border-bottom: 3px solid #dc143c;
+    display: inline-block;
+    text-transform: uppercase;
+    animation: moveInForms 3s;
+    animation-delay: .4s;
+}
+.rightside .formbox .inputbox{
+    margin-bottom: 30px;
+}
+.rightside .formbox .inputbox span{
+    font-size: 16px;
+    font-weight: 300;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #607d8b;
+    letter-spacing: 1px;
+}
+.rightside .formbox .inputbox input{
+    width: 100%;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #607d8b;
+    border: 1px solid #607d8b;
+    border-radius: 30px;
+    background: transparent;
+}
+.rightside .formbox .inputbox input[type="submit"]{
+    background: #dc143c;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: ease-in-out .4s;
+}
+.rightside .formbox .inputbox input[type="submit"]:hover{
+    background: #333;
+    color: #fff;
+}
+.rightside .formbox .remember{
+    margin-bottom: 10px;
+    color: #607d8b;
+    font-weight: 400;
+    font-size: 16px;
+}
+.rightside .formbox .inputbox .signup{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.rightside .formbox .inputbox .signup p{
+    color: #607d8b;
+}
+.rightside .formbox .inputbox .signup a{
+    color: #dc143c;
+}
+.formbox h3{
+    color: #dc143c;
+    font-weight: 600;
+    text-align: center;
+}
+.formbox .socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.formbox .socials li{
+    list-style: none;
+    width: 32px;
+    margin-left: 30px;
+}
+.formbox .socials li a{
+    text-decoration: none;
+}
+.formbox .socials li i{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    color: #fff;   
+    border-radius: 50%;
+    background: #dc143c;
+    transition: all .4s;
+}
+.formbox .socials li:hover a i{
+    background: #333;
+}
+.formbox .socials li a i:hover{
+    color: #dc143c;
+}
+
+
+/*** Registration styling***/
+#registeration{
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    background: linear-gradient(225deg,#dc143c,#03a9f4);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reg-form{
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: -3px -5px 2px 2px rgba(0, 0, 0, 0.6);
+}
+.reg-title h3{
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #607d8b;
+    margin-bottom: 20px;
+    animation: moveInForms 5s infinite;
+    animation-delay: .4s;
+}
+.reg-form .reg-input{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.reg-form .reg-input label{
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #607d8b;
+    text-transform: capitalize;
+}
+.reg-form .reg-input input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #607d8b;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+.reg-form .reg-input .custom_select{
+    position: relative;
+    width: 100%;
+    height: 37px;
+}
+.reg-form .reg-input .custom_select select{
+    appearance: none;
+    border: 1px solid #607d8b;
+    width: 100%;
+    height: 100%;
+    padding: 5px 12px;
+    border-radius: 3px;
+    outline: none;
+}
+.reg-form .reg-input .custom_select::before{
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    border: 7px solid;
+    border-color: #607d8b transparent transparent transparent;
+    pointer-events: none;
+}
+.reg-form .reg-input input:focus,
+.reg-form .reg-input select:focus{
+    border: 1px solid #03a9f4;
+}
+.terms p{
+    font-size: 14px;
+    color: #dc143c;
+    width: 100%;
+    margin-left: 3px;
+}
+.terms{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+    margin-bottom: 10px;
+}
+.register-btn .reg-btn{
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: none;
+    background: #dc143c;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: ease-out .4s;
+}
+.register-btn .reg-btn:hover{
+    background: #03a9f4;
+}
+
+/*************contact us*******************/
+#contact-us{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 100px;
+    background: url(./img/pexels-suzy-hazelwood-1098515.jpg);
+    background-size: cover;
+    background-position: bottom ;
+    opacity: 1;
+}
+#contact-us::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg,#111,#111);
+    z-index: -1;
+    opacity: 0.5;
+}
+.content{
+    max-width: 800px;
+    text-align: center;
+}
+.content h3{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+.content p{
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+#contact-us .main-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+#contact-us .main-content .main-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+#contact-us .main-content .main-left .left-box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+#contact-us .main-content .main-left .left-box .icon-left{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contact-us .main-content .main-left .left-box .icon-left i{
+    font-size: 20px;
+}
+#contact-us .main-content .main-left .left-box .txt-left{
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#contact-us .main-content .main-left .left-box .txt-left h4{
+    font-weight: 600;
+    font-size: 20px;
+    color: #03a9f4;
+}
+.main-right{
+    width: 40%;
+    padding: 40px ;
+    background: #fff;
+    border-radius: 6px;
+}
+.main-right h3{
+    font-size: 40px;
+    color: #03a9f4;
+    font-weight: 600;
+}
+.main-right .contact-form{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.main-right .contact-form input,
+.main-right .contact-form textarea{
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 0;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #03a9f4;
+    resize: none;
+}
+.main-right .contact-form span{
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    padding: 5px 0;
+    margin: 10px 0;
+    pointer-events: none;
+    color: #666;
+}
+
+.contact-btn{
+    margin-top: 20px;
+}
+.main-right .contact-form input:focus ~ span,
+.main-right .contact-form input:valid ~ span,
+.main-right .contact-form textarea:focus ~ span,
+.main-right .contact-form textarea:valid ~ span{
+    color: #dc143c;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.register-btn a{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px;
+}
+/***************calculator UI**********************************/
+#calculator{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    flex-direction: column;
+}
+#calculator h2{
+    color: #03a9f4;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+#calculator h2 span{
+    color: #dc143c;
+}
+.calc-container{
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    background: #333;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.25),10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.calc-container h3{
+    color: #fff;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    letter-spacing: 3px;
+}
+.calculator{
+    position: relative;
+    display: grid;
+}
+.calculator .value{
+    position: relative;
+    grid-column: span 4;
+    height: 100px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 10px;
+    background: #a7af7c;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+}
+.calculator span{
+    position: relative;
+    display: grid;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    background: linear-gradient(180deg,#2f2f2f,#3f3f3f);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator span::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 12px;
+    background: linear-gradient(90deg, #2d2d2d,#4d4d4d);
+    border-radius: 10px;
+}
+.calculator span i{
+    position: relative;
+    font-size: 1.2em;
+    font-style: normal;
+}
+.calculator .clear{
+    grid-column: span 2;
+    width: 150px;
+    background: #f00;
+
+}
+.calculator .clear::before{
+    background: linear-gradient(90deg,#d20000,#ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+.calculator .plus{
+    grid-row: span 2;
+    height: 115px;
+}
+.calculator .equal{
+    background: #03a9f4;
+}
+.calculator .equal::before{
+    background: linear-gradient(90deg,#03a9f4,#ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
